@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
-import { ColPropsTypes } from "./component.col.types";
+import { ColComponentPropsTypes } from "./component.col.types";
 
-const Col = styled.div<ColPropsTypes>`
+const Col = styled.div<ColComponentPropsTypes>`
   width: 100%;
   position: relative;
   padding-left: ${({ theme }) => theme.break.main};

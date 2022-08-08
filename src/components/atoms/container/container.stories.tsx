@@ -3,7 +3,6 @@ import Container from "./component.container";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { ContainerComponentPropsTypes } from "components/atoms/container/component.container.types";
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "GridSystem/Container",
   component: Container,
