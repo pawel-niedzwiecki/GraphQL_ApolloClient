@@ -4,7 +4,7 @@ export interface ContainerComponentStyleTypes {
 
 export interface ContainerComponentPropsTypes {
   style?: {};
-  size?: string;
   className?: string;
-  children: JSX.Element | JSX.Element[];
+  size?: "full" | "normal";
+  children?: JSX.Element | JSX.Element[];
 }
