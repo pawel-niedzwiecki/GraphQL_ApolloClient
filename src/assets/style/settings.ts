@@ -2,10 +2,10 @@ import { MainSettingsTemplate } from "utils/types/utils.types.mainSettingsTempla
 
 const settings: MainSettingsTemplate = {
   // settings color
-  white: "#FFFFFF",
-  succes: "#318841",
-  desactive: "#AFAFAF",
-  mainBackGround:
+  colorWhite: "#FFFFFF",
+  colorSucces: "#318841",
+  colorDesactive: "#AFAFAF",
+  colorMainBackGround:
     "linear-gradient(167deg, rgba(44,90,114,1) 0%, rgba(23,30,40,1) 38%, rgba(30,31,39,1) 45%, rgba(51,33,37,1) 87%, rgba(52,33,37,1) 100%)",
 
   // settings break

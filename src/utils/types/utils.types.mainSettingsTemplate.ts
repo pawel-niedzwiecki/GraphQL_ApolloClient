@@ -1,8 +1,8 @@
 export type MainSettingsTemplate = {
-  white: string;
-  succes: string;
-  desactive: string;
-  mainBackGround: string;
+  colorWhite: string;
+  colorSucces: string;
+  colorDesactive: string;
+  colorMainBackGround: string;
 
   break: { small: string; main: string; big: string };
   breakPoint: { type: string; break: string }[];
