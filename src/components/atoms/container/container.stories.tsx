@@ -1,6 +1,6 @@
 import React from "react";
-import Container from "./component.container";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { Container, Row, Col } from "components/molecules/gridSystem";
 import { ContainerComponentPropsTypes } from "components/atoms/container/component.container.types";
 
 export default {
@@ -16,7 +16,11 @@ export default {
 
 const Template: ComponentStory<typeof Container> = (args: ContainerComponentPropsTypes): JSX.Element => (
   <Container {...args}>
-    <>JSX ELEMENT</>
+    <Row>
+      <Col xs={12}>
+        <p style={{ background: "green", margin: "1rem 0" }}>JSX ELEMENT</p>
+      </Col>
+    </Row>
   </Container>
 );
 
