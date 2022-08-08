@@ -3,8 +3,8 @@ export interface ContainerComponentStyleTypes {
 }
 
 export interface ContainerComponentPropsTypes {
-  size?: string;
   style?: {};
+  size?: string;
   className?: string;
   children: JSX.Element | JSX.Element[];
 }
