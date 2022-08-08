@@ -6,7 +6,7 @@ const settings: MainSettingsTemplate = {
   colorSucces: "#318841",
   colorDesactive: "#AFAFAF",
   colorMainBackGround:
-    "linear-gradient(167deg, rgba(44,90,114,1) 0%, rgba(23,30,40,1) 38%, rgba(30,31,39,1) 45%, rgba(51,33,37,1) 87%, rgba(52,33,37,1) 100%)",
+    "linear-gradient(90deg, rgba(44,90,114,1) 0%, rgba(23,30,40,1) 38%, rgba(30,31,39,1) 45%, rgba(51,33,37,1) 87%, rgba(52,33,37,1) 100%);",
 
   // settings break
   break: { small: "0.75rem", main: "1.5rem", big: "3rem" },

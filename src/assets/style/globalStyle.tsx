@@ -1,11 +1,7 @@
 import * as styled from "styled-components";
 import { MainSettingsTemplate } from "utils/types/utils.types.mainSettingsTemplate";
 
-type GlobalStyleProps = {
-  theme: MainSettingsTemplate;
-};
-
-const GlobalStyle = styled.createGlobalStyle<GlobalStyleProps>`
+const GlobalStyle = styled.createGlobalStyle`
   *,
   *::before,
   *::after {
@@ -25,8 +21,8 @@ const GlobalStyle = styled.createGlobalStyle<GlobalStyleProps>`
     font-size: 1.6rem;
     font-style: normal;
     font-weight: normal;
-    color: ${({ theme }) => theme.colorWhite};
-    background-color: ${({ theme }) => theme.colorMainBackGround};
+    color: ${({ theme }: { theme: MainSettingsTemplate }): string => theme.colorWhite};
+    background-image: ${({ theme }: { theme: MainSettingsTemplate }) => theme.colorMainBackGround};
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans",
       sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
