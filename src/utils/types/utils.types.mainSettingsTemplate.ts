@@ -3,7 +3,6 @@ export type MainSettingsTemplate = {
   colorSucces: string;
   colorDesactive: string;
   colorMainBackGround: string;
-
   break: { small: string; main: string; big: string };
   breakPoint: { type: string; break: string }[];
   gridCol: number;
