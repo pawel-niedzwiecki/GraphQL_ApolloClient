@@ -9,6 +9,7 @@ export default {
   argTypes: {
     sugests: { control: "object" },
     valueDefault: { control: "text" },
+    callBack: { control: "function" },
   },
 } as ComponentMeta<typeof InputSearch>;
 
@@ -27,4 +28,16 @@ WithSugests.args = {
     { name: "Morty", url: "/character/2" },
   ],
   valueDefault: "R",
+};
+
+export const WithCallBack = Template.bind({});
+WithCallBack.args = {
+  sugests: [
+    { name: "Rick", url: "/character/1" },
+    { name: "Morty", url: "/character/2" },
+  ],
+  valueDefault: "R",
+  callBack: (args: string) => {
+    alert(args);
+  },
 };

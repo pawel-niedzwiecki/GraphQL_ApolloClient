@@ -13,8 +13,6 @@ const ComponentInputSearch = ({ sugests = [], valueDefault, callBack }: Componen
     typeof callBack === "function" && callBack(value || "");
   }, [value, callBack]);
 
-  console.log(sugests);
-  console.log(value);
   return (
     <Wrapper>
       <Input
