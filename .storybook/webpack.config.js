@@ -1,6 +1,6 @@
 const path = require("path");
 
-module.exports = ({ config }) => {
+module.exports = ({ config, mode }) => {
   // a bunch of other rules here
 
   config.resolve.modules = [path.resolve(__dirname, "..", "src"), "node_modules"];

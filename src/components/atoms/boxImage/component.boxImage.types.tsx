@@ -4,7 +4,7 @@ export enum ComponentBoxImageEnumTypes {
 }
 
 export interface ComponentBoxImagePropsTypes {
-  url: string;
+  url?: string | null;
   type: ComponentBoxImageEnumTypes;
 }
 
