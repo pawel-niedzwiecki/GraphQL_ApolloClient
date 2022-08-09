@@ -25,7 +25,7 @@ export default function ComponentPagination({ pageActive, pageCount, url, pagina
       <Item>
         <span>...</span>
       </Item>
-      {pageCount - (paginationSize - 1) > 0 && (
+      {pageCount - (paginationSize - 2) > 0 && (
         <Item>
           <Button href="/" title={`page: ${pageCount}`}>
             {`${pageCount}`}
