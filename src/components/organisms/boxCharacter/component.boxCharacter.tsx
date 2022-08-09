@@ -21,7 +21,9 @@ const ComponentBoxCharacter = ({}: ComponentBoxCharacterPropsTypes): JSX.Element
       <NameCharacter>Rick Shanhes</NameCharacter>
       <List type={ConponentListEnumTypes.level} selector="#">
         <>xw</>
-        <></>
+        <>xw</>
+        <>xw</>
+        <>xw</>
       </List>
       <Button href="/" title="more">
         MORE
