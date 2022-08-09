@@ -9,7 +9,13 @@ import { ComponentBoxImageEnumTypes } from "components/atoms/boxImage/component.
 import { ComponentBoxCharacterPropsTypes } from "./component.boxCharacter.types";
 import Button from "components/atoms/button/component.button";
 
-const ComponentBoxCharacter = ({}: ComponentBoxCharacterPropsTypes): JSX.Element => {
+const ComponentBoxCharacter = ({
+  statusName = "ALIFE",
+  srcImage = null,
+  nameCharacter = "No name",
+  params,
+  url,
+}: ComponentBoxCharacterPropsTypes): JSX.Element => {
   return (
     <Box>
       <Status
