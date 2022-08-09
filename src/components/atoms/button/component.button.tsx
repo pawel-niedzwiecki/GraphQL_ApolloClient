@@ -1,10 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "./component.button.style";
+import { ButtonTypes } from "./component.button.types";
 
-const ComponentButton = ({ href, title, children }: { href: string; title: string; children: JSX.Element | string }): JSX.Element => {
+const ComponentButton = ({ id, href, title, children }: ButtonTypes): JSX.Element => {
   return (
-    <Link href={href} title={title} passHref>
+    <Link id={id} href={href} title={title} passHref>
       <Button>{children}</Button>
     </Link>
   );
