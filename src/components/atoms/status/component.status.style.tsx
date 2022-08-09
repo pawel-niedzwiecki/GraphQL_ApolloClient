@@ -11,6 +11,6 @@ export const Status = styled.ul<ComponentListTypes>`
   border-radius: 1.5rem;
   color: ${({ theme }: { theme: MainSettingsTemplate }) => theme.colorWhite};
   padding: ${({ theme }: { theme: MainSettingsTemplate }) => `${theme.break.small} ${theme.break.main}`};
-  background-color: ${({ theme, type }: { theme: MainSettingsTemplate; type: ComponentStatusEnumTypes }) =>
-    type === ComponentStatusEnumTypes.succes ? theme.colorSucces : theme.colorDesactive};
+  background: ${({ theme, type }: { theme: MainSettingsTemplate; type: ComponentStatusEnumTypes }) =>
+    type === ComponentStatusEnumTypes.succes ? theme.colorSucces : theme.colorMainBackGround};
 `;

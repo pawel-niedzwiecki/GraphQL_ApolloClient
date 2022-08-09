@@ -1,7 +1,10 @@
+import { ComponentStatusEnumTypes } from "components/atoms/status/component.status.types";
+
 export interface ComponentBoxCharacterPropsTypes {
+  statusType?: ComponentStatusEnumTypes;
   statusName: string;
-  srcImage: null | string;
   nameCharacter: string;
-  params: JSX.Element[];
-  url: string;
+  srcImage: null | string;
+  params?: JSX.Element[] | null;
+  url?: string;
 }

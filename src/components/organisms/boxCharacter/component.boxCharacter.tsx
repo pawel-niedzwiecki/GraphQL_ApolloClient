@@ -10,28 +10,29 @@ import { ComponentBoxCharacterPropsTypes } from "./component.boxCharacter.types"
 import Button from "components/atoms/button/component.button";
 
 const ComponentBoxCharacter = ({
+  statusType = ComponentStatusEnumTypes.succes,
   statusName = "ALIFE",
   srcImage = null,
   nameCharacter = "No name",
-  params,
-  url,
+  params = null,
+  url = "/",
 }: ComponentBoxCharacterPropsTypes): JSX.Element => {
   return (
     <Box>
-      <Status
-        statusName="ALIFE"
-        type={ComponentStatusEnumTypes.succes}
-        style={{ position: "absolute", right: "1.5rem", top: "1.5rem", zIndex: "99" }}
-      />
-      <BoxImage type={ComponentBoxImageEnumTypes.thumbnail} />
-      <NameCharacter>Rick Shanhes</NameCharacter>
-      <List type={ConponentListEnumTypes.level} selector="#">
-        <>xw</>
-        <>xw</>
-        <>xw</>
-        <>xw</>
-      </List>
-      <Button href="/" title="more">
+      <Status statusName={statusName} type={statusType} style={{ position: "absolute", right: "1.5rem", top: "1.5rem", zIndex: "99" }} />
+      <BoxImage type={ComponentBoxImageEnumTypes.thumbnail} src={srcImage} />
+      <NameCharacter>{nameCharacter}</NameCharacter>
+      {params?.length && (
+        <List type={ConponentListEnumTypes.level} selector="#">
+          {params.map(
+            (item: JSX.Element, i: number): JSX.Element => (
+              <>{item}</>
+            )
+          )}
+        </List>
+      )}
+
+      <Button href={url} title="more">
         MORE
       </Button>
     </Box>

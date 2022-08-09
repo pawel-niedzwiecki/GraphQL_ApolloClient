@@ -7,6 +7,7 @@ export const Box = styled.ul`
   display: block;
   position: relative;
   border-radius: 0.3rem;
+  margin: ${({ theme }: { theme: MainSettingsTemplate }) => theme.break.small} 0;
   border: 0.3rem solid ${({ theme }: { theme: MainSettingsTemplate }) => theme.colorWhite};
 
   ul {
