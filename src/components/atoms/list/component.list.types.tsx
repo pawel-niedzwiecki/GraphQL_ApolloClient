@@ -5,7 +5,7 @@ export enum ConponentListEnumTypes {
 
 export interface ComponentListPropsTypes {
   selector?: string;
-  children: JSX.Element[];
+  children: JSX.Element[] | JSX.Element;
   type: ConponentListEnumTypes;
 }
 

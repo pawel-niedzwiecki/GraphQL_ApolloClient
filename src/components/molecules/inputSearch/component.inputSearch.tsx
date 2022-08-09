@@ -21,7 +21,7 @@ const ComponentInputSearch = ({ sugests = [], valueDefault, callBack }: Componen
         onChange={(e) => setValue(e.target.value)}
         type="search"
         id="inputSearch"
-        name="search"
+        name="query"
       />
       {!!sugests?.length && (
         <Sugests>
