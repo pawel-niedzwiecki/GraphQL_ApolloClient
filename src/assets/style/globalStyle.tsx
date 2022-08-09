@@ -23,8 +23,8 @@ const GlobalStyle = styled.createGlobalStyle`
     font-weight: normal;
     color: ${({ theme }: { theme: MainSettingsTemplate }): string => theme.colorWhite};
     background-image: ${({ theme }: { theme: MainSettingsTemplate }) => theme.colorMainBackGround};
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans",
-      sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   p,
@@ -115,6 +115,22 @@ const GlobalStyle = styled.createGlobalStyle`
     width: 100%;
     display: block;
     position: relative;
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    max-width: 100%;
+    position: relative;
+    border-radius: 3rem;
+    background: transparent;
+    color: ${({ theme }: { theme: MainSettingsTemplate }): string => theme.colorWhite};
+    border: 3px solid ${({ theme }: { theme: MainSettingsTemplate }): string => theme.colorSucces};
+    padding: ${({ theme }: { theme: MainSettingsTemplate }): string => `${theme.break.small} ${theme.break.main}`};
+
+    &:focus {
+      outline: none;
+    }
   }
 `;
 
