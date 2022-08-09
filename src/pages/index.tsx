@@ -11,7 +11,7 @@ const Home: NextPage = () => {
           <Col xs={12}>
             ok
             <Button href="/" title="test">
-              ok
+              kliknij
             </Button>
           </Col>
         </Row>
