@@ -1,12 +1,19 @@
 import type { NextPage } from "next";
 import { Container, Row, Col } from "components/molecules/gridSystem";
 
+import Button from "components/atoms/button/component.button";
+
 const Home: NextPage = () => {
   return (
     <>
       <Container>
         <Row>
-          <Col xs={12}>ok</Col>
+          <Col xs={12}>
+            ok
+            <Button href="/" title="test">
+              ok
+            </Button>
+          </Col>
         </Row>
       </Container>
     </>
