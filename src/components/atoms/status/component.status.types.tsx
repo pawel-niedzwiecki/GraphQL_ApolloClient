@@ -4,6 +4,7 @@ export enum ComponentStatusEnumTypes {
 }
 
 export interface ComponentStatusPropsTypes {
+  style?: {};
   statusName: string;
   type: ComponentStatusEnumTypes;
 }
