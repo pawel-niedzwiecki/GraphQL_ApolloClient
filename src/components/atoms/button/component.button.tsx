@@ -5,8 +5,8 @@ import { ButtonTypes } from "./component.button.types";
 
 const ComponentButton = ({ id, disable = false, href, title, children }: ButtonTypes): JSX.Element => {
   return (
-    <Link id={id} href={href} onClick={(e) => disable && e.preventDefault()} passHref>
-      <Button disable={disable} title={title}>
+    <Link id={id} href={href} passHref>
+      <Button disable={disable} title={title} onClick={(e) => disable && e.preventDefault()}>
         {children}
       </Button>
     </Link>
