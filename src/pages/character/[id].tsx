@@ -11,7 +11,11 @@ interface PageHomePropsTypes {
 }
 
 const Home: NextPage<PageHomePropsTypes, JSX.Element> = ({ data }: { data: CharacterDataType }): JSX.Element => {
-  return <>id: {data?.character?.id}</>;
+  return (
+    <>
+      id: {data?.character?.id} name: {data?.character?.name}
+    </>
+  );
 };
 
 interface PropsTypes {
