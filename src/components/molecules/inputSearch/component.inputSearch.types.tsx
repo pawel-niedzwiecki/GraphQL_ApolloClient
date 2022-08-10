@@ -6,7 +6,7 @@ export interface SugestSearchType {
 export type ValueDefaultSearchType = string;
 
 export interface ComponentInputSearchPropsTypes {
-  sugests?: SugestSearchType[];
   callBack?: (arg: string) => void;
+  sugests?: SugestSearchType[] | null;
   valueDefault?: ValueDefaultSearchType;
 }

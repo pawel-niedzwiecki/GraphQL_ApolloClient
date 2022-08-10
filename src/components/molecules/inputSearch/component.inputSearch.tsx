@@ -8,6 +8,7 @@ import { ConponentListEnumTypes } from "components/atoms/list/component.list.typ
 
 const ComponentInputSearch = ({ sugests = [], valueDefault, callBack }: ComponentInputSearchPropsTypes): JSX.Element => {
   const [value, setValue] = useState(valueDefault);
+  const [active, setActive] = useState(false);
 
   useEffect(() => {
     typeof callBack === "function" && callBack(value || "");
@@ -16,14 +17,24 @@ const ComponentInputSearch = ({ sugests = [], valueDefault, callBack }: Componen
   return (
     <Wrapper>
       <Input
-        sugests={!!sugests?.length}
+        sugests={!!sugests?.length && active}
         value={value}
+        onFocus={() =>
+          setTimeout(() => {
+            setActive(true);
+          }, 150)
+        }
+        onBlur={() =>
+          setTimeout(() => {
+            setActive(false);
+          }, 150)
+        }
         onChange={(e) => setValue(e.target.value)}
         type="search"
         id="inputSearch"
         name="query"
       />
-      {!!sugests?.length && (
+      {!!sugests?.length && active && (
         <Sugests>
           <List type={ConponentListEnumTypes.vertical} selector="#">
             {sugests.map(
