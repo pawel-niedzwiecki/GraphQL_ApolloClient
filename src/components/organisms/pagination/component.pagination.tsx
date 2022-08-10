@@ -6,7 +6,7 @@ export default function ComponentPagination({ pageActive, pageCount, url, pagina
   return (
     <Pagination>
       <Item>
-        <Button href={pageActive === 1 ? url : `${url}/${pageActive - 1}`} title="Back" disable={pageActive === 1}>
+        <Button href={pageActive === 1 ? url : `${url}${pageActive - 1}`} title="Back" disable={pageActive === 1}>
           Back
         </Button>
       </Item>
@@ -15,7 +15,7 @@ export default function ComponentPagination({ pageActive, pageCount, url, pagina
           <>
             <Item>
               <Button
-                href={pageActive + i === 1 ? url : `${url}/${pageActive + i}`}
+                href={pageActive + i === 1 ? url : `${url}${pageActive + i}`}
                 title={`page: ${pageActive + i}`}
                 disable={pageActive === pageActive + i}
               >
@@ -38,7 +38,7 @@ export default function ComponentPagination({ pageActive, pageCount, url, pagina
       )}
 
       <Item>
-        <Button href={`${url}/${pageActive + 1}`} title="Next" disable={pageCount <= pageActive}>
+        <Button href={`${url}${pageActive + 1}`} title="Next" disable={pageCount <= pageActive}>
           Next
         </Button>
       </Item>
