@@ -16,7 +16,6 @@ export default function ComponentSectionCharacterFull({ data }: { data: Characte
     variables: { id: data.character.id },
   });
 
-  console.log(EpisodesData?.character?.episode?.map((episote: EpisodeType, i: number) => <>{episote.name}</>));
   return (
     <Section>
       <ImageBox type={ComponentBoxImageEnumTypes.full} src={data?.character?.image || null} />
