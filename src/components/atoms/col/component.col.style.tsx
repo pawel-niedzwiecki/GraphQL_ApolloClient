@@ -4,6 +4,9 @@ import { ColComponentPropsTypes } from "./component.col.types";
 const Col = styled.div<ColComponentPropsTypes>`
   width: 100%;
   position: relative;
+  align-self: auto;
+  -webkit-align-self: auto;
+  -ms-flex-item-align: auto;
   padding-left: ${({ theme }) => theme.break.main};
   padding-right: ${({ theme }) => theme.break.main};
 

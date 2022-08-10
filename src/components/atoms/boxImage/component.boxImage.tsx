@@ -4,7 +4,7 @@ import { Box, Demo } from "./component.boxImage.style";
 import { ComponentBoxImagePropsTypes } from "./component.boxImage.types";
 
 const ComponentBoxImage = ({ type, src }: ComponentBoxImagePropsTypes): JSX.Element => {
-  return <Box type={type}>{!!src ? <Img src={src} layout="fill" /> : <Demo>NO IMG</Demo>}</Box>;
+  return <Box type={type}>{!!src ? <Img src={src} layout="fill" objectFit="cover" /> : <Demo>NO IMG</Demo>}</Box>;
 };
 
 export default ComponentBoxImage;

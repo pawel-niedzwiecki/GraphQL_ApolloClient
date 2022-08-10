@@ -16,8 +16,12 @@ export const Input = styled.input<InputType>`
   border-bottom-left-radius: ${({ sugests }: InputType) => (sugests ? "0rem" : "3rem")};
   border-bottom-right-radius: ${({ sugests }: InputType) => (sugests ? "0rem" : "3rem")};
 `;
+
 export const Sugests = styled.div`
   width: 100%;
+  z-index: 9999;
+  overflow: hidden;
+  position: absolute;
   border-bottom-left-radius: 3rem;
   border-bottom-right-radius: 3rem;
   padding: ${({ theme }: { theme: MainSettingsTemplate }) => theme.break.main};

@@ -8,6 +8,11 @@ export interface CharacterType {
   created: Date;
 }
 
+export interface InfoCharactersDataType {
+  next: number;
+  pages: number;
+}
+
 export interface CharactersDataType {
-  characters: { results: CharacterType[] };
+  characters: { results: CharacterType[]; info: InfoCharactersDataType };
 }

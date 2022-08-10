@@ -6,7 +6,7 @@ export default function ComponentPagination({ pageActive, pageCount, url, pagina
   return (
     <Pagination>
       <Item>
-        <Button href={`${url}/${pageActive - 1}`} title="Back" disable={pageActive > 1}>
+        <Button href={pageActive === 1 ? url : `${url}${pageActive - 1}`} title="Back" disable={pageActive === 1}>
           Back
         </Button>
       </Item>
@@ -14,7 +14,11 @@ export default function ComponentPagination({ pageActive, pageCount, url, pagina
         (_: undefined, i: number): JSX.Element => (
           <>
             <Item>
-              <Button href={`${url}/${i}`} title={`page: ${pageActive + i}`} disable={pageActive === pageActive + i}>
+              <Button
+                href={pageActive + i === 1 ? url : `${url}${pageActive + i}`}
+                title={`page: ${pageActive + i}`}
+                disable={pageActive === pageActive + i}
+              >
                 {`${pageActive + i}`}
               </Button>
             </Item>
@@ -25,16 +29,16 @@ export default function ComponentPagination({ pageActive, pageCount, url, pagina
       <Item>
         <span>...</span>
       </Item>
-      {pageCount - (paginationSize - 2) > 0 && (
+      {pageCount - (paginationSize - 1) > 0 && (
         <Item>
-          <Button href="/" title={`page: ${pageCount}`}>
+          <Button href={`${pageCount}`} title={`page: ${pageCount}`}>
             {`${pageCount}`}
           </Button>
         </Item>
       )}
 
       <Item>
-        <Button href={`${url}/${pageActive - 1}`} title="Next" disable={pageCount <= pageActive}>
+        <Button href={`${url}${pageActive + 1}`} title="Next" disable={pageCount <= pageActive}>
           Next
         </Button>
       </Item>

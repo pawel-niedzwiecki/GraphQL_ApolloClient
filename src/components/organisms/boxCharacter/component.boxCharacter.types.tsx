@@ -5,6 +5,6 @@ export interface ComponentBoxCharacterPropsTypes {
   statusName: string;
   nameCharacter: string;
   srcImage: null | string;
-  params?: JSX.Element[] | null;
+  params?: string[] | null;
   url?: string;
 }

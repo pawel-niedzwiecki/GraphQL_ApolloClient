@@ -1,16 +1,34 @@
 import type { NextPage } from "next";
-import { Container, Row, Col } from "components/molecules/gridSystem";
+import { client } from "utils/dataBase/client/apollo-client";
+import { CharactersDataType } from "utils/types/db/query/types.db.query.characters";
+import { GET_CHARACTERS } from "utils/dataBase/query/utils.db.query.characters";
 
-const Home: NextPage = () => {
+import { ComponentSectionCharactersList } from "components/templates/sections";
+
+interface PageHomePropsTypes {
+  data: CharactersDataType;
+}
+
+const Home: NextPage<PageHomePropsTypes, JSX.Element> = ({ data }: { data: CharactersDataType }): JSX.Element => {
   return (
     <>
-      <Container>
-        <Row>
-          <Col xs={12}>ok</Col>
-        </Row>
-      </Container>
+      <ComponentSectionCharactersList data={data} />
     </>
   );
 };
+
+interface PropsTypes {
+  props: { data: CharactersDataType };
+}
+
+export async function getStaticProps(): Promise<PropsTypes> {
+  const { data } = await client.query({ query: GET_CHARACTERS, variables: { page: 1, name: "" } });
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
 
 export default Home;

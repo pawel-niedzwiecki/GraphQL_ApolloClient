@@ -5,17 +5,17 @@ import {} from "./component.boxCharacter.types";
 export const Box = styled.ul`
   width: 100%;
   display: block;
+  overflow: hidden;
   position: relative;
   border-radius: 0.3rem;
   margin: ${({ theme }: { theme: MainSettingsTemplate }) => theme.break.small} 0;
   border: 0.3rem solid ${({ theme }: { theme: MainSettingsTemplate }) => theme.colorWhite};
 
   ul {
+    display: block;
     padding-left: ${({ theme }: { theme: MainSettingsTemplate }) => theme.break.main};
     li {
-      &:first-of-type {
-        padding-left: 0;
-      }
+      padding-left: 0;
     }
   }
 

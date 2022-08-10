@@ -32,7 +32,7 @@ Main.args = {
   url: "/character/1",
   statusName: "ALIFE",
   nameCharacter: "Rick",
-  params: [<>param 1</>, <>param 2</>],
+  params: ["params1", "params2"],
   srcImage: "https://rickandmortyapi.com/api/character/avatar/152.jpeg",
   statusType: ComponentStatusEnumTypes.succes,
 };
