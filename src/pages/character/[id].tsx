@@ -1,25 +1,25 @@
 import type { NextPage } from "next";
+import { ApolloQueryResult } from "@apollo/client";
 import { client } from "utils/dataBase/client/apollo-client";
-import { CharactersDataType, CharacterType } from "utils/types/db/query/types.db.query.characters";
-import { GET_CHARACTERS } from "utils/dataBase/query/utils.db.query.characters";
 
 import { ComponentSectionCharactersList } from "components/templates/sections";
-import { ApolloQueryResult } from "@apollo/client";
+import { GET_CHARACTER } from "utils/dataBase/query/utils.db.query.character";
+import { CharacterType, CharacterDataType } from "utils/types/db/query/types.db.query.character";
 
 interface PageHomePropsTypes {
-  data: CharactersDataType;
+  data: CharacterDataType;
 }
 
-const Home: NextPage<PageHomePropsTypes, JSX.Element> = ({ data }: { data: CharactersDataType }): JSX.Element => {
-  return <ComponentSectionCharactersList data={data} />;
+const Home: NextPage<PageHomePropsTypes, JSX.Element> = ({ data }: { data: CharacterDataType }): JSX.Element => {
+  return <>id: {data?.character?.id}</>;
 };
 
 interface PropsTypes {
-  props: { data: CharactersDataType };
+  props: { data: CharacterDataType };
 }
 
 export async function getServerSideProps({ params }: { params: { id: string } }): Promise<PropsTypes> {
-  const { data } = await client.query({ query: GET_CHARACTERS, variables: { page: parseInt(params.id), name: "" } });
+  const { data } = await client.query({ query: GET_CHARACTER, variables: { id: params.id } });
 
   return {
     props: {
