@@ -11,17 +11,14 @@ export const QueryResult = ({
   error: any;
   data: any;
   children: JSX.Element | JSX.Element[];
-}) => {
+}): JSX.Element | JSX.Element => {
   if (error) {
     return <p>ERROR: {error.message}</p>;
-  }
-  if (loading) {
+  } else if (loading) {
     return <Loader />;
-  }
-  if (!data) {
+  } else if (data) {
+    return <>{children}</>;
+  } else {
     return <p>Nothing to show...</p>;
-  }
-  if (data) {
-    return children;
   }
 };

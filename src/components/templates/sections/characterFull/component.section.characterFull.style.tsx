@@ -26,12 +26,25 @@ export const Button = styled.button`
   border-radius: 3rem;
   margin: 0 auto;
   background-color: transparent;
-  color: ${({ theme }: { theme: MainSettingsTemplate; disable: boolean }): string => theme.colorWhite};
+  color: ${({ theme }: { theme: MainSettingsTemplate }): string => theme.colorWhite};
   padding: ${({ theme }: { theme: MainSettingsTemplate }): string => `${theme.break.small} ${theme.break.big}`};
-  border: 0.3rem solid ${({ theme }: { theme: MainSettingsTemplate; disable: boolean }): string => theme.colorSucces};
+  border: 0.3rem solid ${({ theme }: { theme: MainSettingsTemplate }): string => theme.colorSucces};
 
   &:hover {
-    color: ${({ theme }: { theme: MainSettingsTemplate; disable: boolean }): string => theme.colorWhite};
-    background-color: ${({ theme }: { theme: MainSettingsTemplate; disable: boolean }): string => theme.colorSucces};
+    color: ${({ theme }: { theme: MainSettingsTemplate }): string => theme.colorWhite};
+    background-color: ${({ theme }: { theme: MainSettingsTemplate }): string => theme.colorSucces};
+  }
+`;
+
+export const BoxResult = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: ${({ theme }: { theme: MainSettingsTemplate }): string => `${theme.break.big} ${theme.break.main}`};
+
+  li {
+    width: 100%;
+    display: block;
+    text-align: center;
   }
 `;
