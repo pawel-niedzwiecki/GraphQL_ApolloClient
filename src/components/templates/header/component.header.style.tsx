@@ -56,13 +56,13 @@ export const Hamburger = styled.div`
 `;
 
 interface BoxForMobileTypes {
-  display: boolean;
+  power: boolean;
 }
 
 export const BoxForMobile = styled.div<BoxForMobileTypes>`
   width: 100%;
   flex-wrap: wrap;
-  display: ${({ display }) => (display ? "flex" : "none")};
+  display: ${({ power }) => (power ? "flex" : "none")};
 
   @media all and (min-width: 768px) {
     display: flex;
