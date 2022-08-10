@@ -6,7 +6,10 @@ export default function ComponentPagination({ pageActive, pageCount, url, pagina
   return (
     <Pagination>
       <Item>
-        <Button href={pageActive === 1 ? `${url}${pageCount}` : `${url}${pageActive - 1}`} title="Back">
+        <Button
+          href={pageActive === 1 ? `${url}${pageCount}` : pageActive === -1 ? `${url}${pageCount - 1}` : `${url}${pageActive - 1}`}
+          title="Back"
+        >
           Back
         </Button>
       </Item>
