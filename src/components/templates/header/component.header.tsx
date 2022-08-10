@@ -10,14 +10,14 @@ import { Container, Row } from "components/molecules/gridSystem";
 import { Header, Form, Hamburger, BoxForMobile } from "./component.header.style";
 import InputSearch from "components/molecules/inputSearch/component.inputSearch";
 import { ConponentListEnumTypes } from "components/atoms/list/component.list.types";
-import { GET_SEARCH_CHARACTERS } from "utils/dataBase/query/utils.db.query.searchCharacter";
+import { GET_CHARACTERS } from "utils/dataBase/query/utils.db.query.characters";
 import { CharactersDataType, CharacterType } from "utils/types/db/query/types.db.query.characters";
 
 const ComponentHeader = (): JSX.Element => {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const { querySearch, setQuerySearch } = useContext(SearchContext);
-  const [getQuery, { data, loading, error }] = useLazyQuery<CharactersDataType>(GET_SEARCH_CHARACTERS, {
+  const [getQuery, { data, loading }] = useLazyQuery<CharactersDataType>(GET_CHARACTERS, {
     variables: { page: 1, name: querySearch },
   });
 

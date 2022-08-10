@@ -6,6 +6,9 @@ const Row = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   box-sizing: border-box;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
   margin-left: ${({ theme }) => `-${theme.break.main}`};
   margin-right: ${({ theme }) => `-${theme.break.main}`};
 `;

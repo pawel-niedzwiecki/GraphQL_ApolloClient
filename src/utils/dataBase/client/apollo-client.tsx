@@ -1,7 +1,10 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client";
 
 const client = new ApolloClient({
-  uri: "https://rickandmortyapi.com/graphql",
+  ssrMode: typeof window === "undefined", // set to true for SSR
+  link: new HttpLink({
+    uri: "https://rickandmortyapi.com/graphql",
+  }),
   cache: new InMemoryCache(),
 });
 

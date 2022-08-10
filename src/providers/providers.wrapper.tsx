@@ -1,6 +1,4 @@
 import React from "react";
-import Img from "next/image";
-import texture from "assets/image/bg.png";
 import settings from "assets/style/settings";
 import { ApolloProvider } from "@apollo/client";
 import { ThemeProvider } from "styled-components";
@@ -15,10 +13,7 @@ const ProviderWrapper: React.FC<ProviderWrapperType> = ({ children }: ProviderWr
   return (
     <ApolloProvider client={client}>
       <ProviderSearch>
-        <ThemeProvider theme={settings}>
-          <Img src={texture} layout="fill" style={{ zIndex: "-1", opacity: 0.5 }} />
-          {children}
-        </ThemeProvider>
+        <ThemeProvider theme={settings}>{children}</ThemeProvider>
       </ProviderSearch>
     </ApolloProvider>
   );

@@ -18,6 +18,8 @@ export const Input = styled.input<InputType>`
 `;
 export const Sugests = styled.div`
   width: 100%;
+  z-index: 9999;
+  position: absolute;
   border-bottom-left-radius: 3rem;
   border-bottom-right-radius: 3rem;
   padding: ${({ theme }: { theme: MainSettingsTemplate }) => theme.break.main};
