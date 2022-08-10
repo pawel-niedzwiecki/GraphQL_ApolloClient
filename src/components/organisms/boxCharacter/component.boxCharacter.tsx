@@ -24,11 +24,10 @@ const ComponentBoxCharacter = ({
       <NameCharacter>{nameCharacter}</NameCharacter>
       {params?.length && (
         <List type={ConponentListEnumTypes.level} selector="#">
-          {params.map(
-            (item: JSX.Element, i: number): JSX.Element => (
-              <>{item}</>
-            )
-          )}
+          {params.map((item: string, _: number): JSX.Element => {
+            if (!!item?.length) return <>{item}</>;
+            else return <>NO DATA</>;
+          })}
         </List>
       )}
 

@@ -1,18 +1,13 @@
-import type { NextPage } from "next";
-import { Row, Col } from "components/molecules/gridSystem";
-import { client } from "utils/dataBase/client/apollo-client";
-import { ComponentStatusEnumTypes } from "components/atoms/status/component.status.types";
+import { Col } from "components/molecules/gridSystem";
 import BoxCharacter from "components/organisms/boxCharacter/component.boxCharacter";
+import { ComponentStatusEnumTypes } from "components/atoms/status/component.status.types";
 import { CharactersDataType, CharacterType } from "utils/types/db/query/types.db.query.characters";
-import { GET_CHARACTERS } from "utils/dataBase/query/utils.db.query.characters";
 
-interface PageHomePropsTypes {
-  data: CharactersDataType;
-}
+import { Section } from "./component.section.charactersList.style";
 
-const Home: NextPage<PageHomePropsTypes, JSX.Element> = ({ data }: { data: CharactersDataType }): JSX.Element => {
+export default function ComponentSectionCharactersList({ data }: { data: CharactersDataType }) {
   return (
-    <Row>
+    <Section>
       {data?.characters?.results.map((character: CharacterType, i: number): JSX.Element => {
         return (
           <Col xs={12} md={6} xl={4} key={i}>
@@ -27,22 +22,6 @@ const Home: NextPage<PageHomePropsTypes, JSX.Element> = ({ data }: { data: Chara
           </Col>
         );
       })}
-    </Row>
+    </Section>
   );
-};
-
-interface PropsTypes {
-  props: { data: CharactersDataType };
 }
-
-export async function getStaticProps(): Promise<PropsTypes> {
-  const { data } = await client.query({ query: GET_CHARACTERS, variables: { page: 1, name: "" } });
-
-  return {
-    props: {
-      data,
-    },
-  };
-}
-
-export default Home;
