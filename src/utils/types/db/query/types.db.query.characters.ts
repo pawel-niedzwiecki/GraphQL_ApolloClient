@@ -14,6 +14,5 @@ export interface InfoCharactersDataType {
 }
 
 export interface CharactersDataType {
-  info: InfoCharactersDataType;
-  characters: { results: CharacterType[] };
+  characters: { results: CharacterType[]; info: InfoCharactersDataType };
 }
