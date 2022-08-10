@@ -5,6 +5,7 @@ export const Pagination = styled.ul`
   display: flex;
   margin: 0 auto;
   flex-wrap: wrap;
+  max-width: 100%;
   width: max-content;
   align-items: flex-end;
 

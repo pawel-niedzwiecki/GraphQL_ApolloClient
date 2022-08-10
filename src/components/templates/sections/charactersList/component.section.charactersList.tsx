@@ -28,7 +28,7 @@ export default function ComponentSectionCharactersList({ data }: { data: Charact
       <Col xs={12} style={{ margin: "1.5rem 0" }}>
         <Pagination
           url="/"
-          paginationSize={3}
+          paginationSize={4}
           pageCount={data?.characters?.info?.pages || 1}
           pageActive={data?.characters?.info?.next - 1 || 0}
         />

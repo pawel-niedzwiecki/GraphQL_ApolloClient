@@ -11,9 +11,9 @@ export const List = styled.ul<ComponentListTypes>`
 
 export const Item = styled.li`
   width: 100%;
+  display: flex;
   position: relative;
   white-space: nowrap;
-  display: inline-block;
   padding: ${({ theme }: { theme: MainSettingsTemplate }) => theme.break.small};
 
   span {

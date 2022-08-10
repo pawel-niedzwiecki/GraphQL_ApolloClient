@@ -10,11 +10,7 @@ interface PageHomePropsTypes {
 }
 
 const Home: NextPage<PageHomePropsTypes, JSX.Element> = ({ data }: { data: CharactersDataType }): JSX.Element => {
-  return (
-    <>
-      <ComponentSectionCharactersList data={data} />
-    </>
-  );
+  return <ComponentSectionCharactersList data={data} />;
 };
 
 interface PropsTypes {

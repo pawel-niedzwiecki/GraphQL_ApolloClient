@@ -24,9 +24,9 @@ const ComponentBoxCharacter = ({
       <NameCharacter>{nameCharacter}</NameCharacter>
       {params?.length && (
         <List type={ConponentListEnumTypes.level} selector="#">
-          {params.map((item: string, _: number): JSX.Element => {
-            if (!!item?.length) return <>{item}</>;
-            else return <>NO DATA</>;
+          {params.map((item: string, i: number): JSX.Element => {
+            if (!!item?.length) return <p key={i}>{item}</p>;
+            else return <p key={i}>NO DATA</p>;
           })}
         </List>
       )}
