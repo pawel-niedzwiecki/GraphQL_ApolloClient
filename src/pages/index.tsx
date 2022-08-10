@@ -1,10 +1,9 @@
 import type { NextPage } from "next";
-import { Row, Col } from "components/molecules/gridSystem";
 import { client } from "utils/dataBase/client/apollo-client";
-import { ComponentStatusEnumTypes } from "components/atoms/status/component.status.types";
-import BoxCharacter from "components/organisms/boxCharacter/component.boxCharacter";
-import { CharactersDataType, CharacterType } from "utils/types/db/query/types.db.query.characters";
+import { CharactersDataType } from "utils/types/db/query/types.db.query.characters";
 import { GET_CHARACTERS } from "utils/dataBase/query/utils.db.query.characters";
+
+import { ComponentSectionCharactersList } from "components/templates/sections";
 
 interface PageHomePropsTypes {
   data: CharactersDataType;
@@ -12,22 +11,9 @@ interface PageHomePropsTypes {
 
 const Home: NextPage<PageHomePropsTypes, JSX.Element> = ({ data }: { data: CharactersDataType }): JSX.Element => {
   return (
-    <Row>
-      {data?.characters?.results.map((character: CharacterType, i: number): JSX.Element => {
-        return (
-          <Col xs={12} md={6} xl={4} key={i}>
-            <BoxCharacter
-              statusName={character.status}
-              nameCharacter={character.name}
-              url={`/character/${character.id}`}
-              params={[character.species, character.type]}
-              srcImage={character?.image ? character?.image : null}
-              statusType={character?.status === "Alive" ? ComponentStatusEnumTypes.succes : ComponentStatusEnumTypes.desactive}
-            />
-          </Col>
-        );
-      })}
-    </Row>
+    <>
+      <ComponentSectionCharactersList data={data} />
+    </>
   );
 };
 
