@@ -1,22 +1,17 @@
 import type { NextPage } from "next";
 import { ApolloQueryResult } from "@apollo/client";
 import { client } from "utils/dataBase/client/apollo-client";
-
-import { ComponentSectionCharactersList } from "components/templates/sections";
 import { GET_CHARACTER } from "utils/dataBase/query/utils.db.query.character";
+import { ComponentSectionCharacterFull } from "components/templates/sections";
 import { CharacterType, CharacterDataType } from "utils/types/db/query/types.db.query.character";
 
 interface PageHomePropsTypes {
   data: CharacterDataType;
 }
 
-const Home: NextPage<PageHomePropsTypes, JSX.Element> = ({ data }: { data: CharacterDataType }): JSX.Element => {
-  return (
-    <>
-      id: {data?.character?.id} name: {data?.character?.name}
-    </>
-  );
-};
+const Home: NextPage<PageHomePropsTypes, JSX.Element> = ({ data }: { data: CharacterDataType }): JSX.Element => (
+  <ComponentSectionCharacterFull data={data} />
+);
 
 interface PropsTypes {
   props: { data: CharacterDataType };
