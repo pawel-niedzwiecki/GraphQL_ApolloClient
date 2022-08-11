@@ -3,8 +3,11 @@ import BoxCharacter from "components/organisms/boxCharacter/component.boxCharact
 import { ComponentStatusEnumTypes } from "components/atoms/status/component.status.types";
 import { CharactersDataType, CharacterType } from "utils/types/db/query/types.db.query.characters";
 import { Section } from "./component.section.charactersList.style";
+import { useEffect } from "react";
 
 export default function ComponentSectionCharactersList({ data }: { data: CharactersDataType }) {
+  useEffect(() => {}, [data]);
+
   return (
     <Section>
       {data?.characters?.results.map((character: CharacterType, i: number): JSX.Element => {
