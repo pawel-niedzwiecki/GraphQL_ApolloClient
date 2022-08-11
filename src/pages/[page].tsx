@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import { client } from "utils/dataBase/client/apollo-client";
 import { CharactersDataType, CharacterType } from "utils/types/db/query/types.db.query.characters";
 import { GET_CHARACTERS } from "utils/dataBase/query/utils.db.query.characters";
-
+import Pagination from "components/organisms/pagination/component.pagination";
 import { ComponentSectionCharactersList } from "components/templates/sections";
 import { ApolloQueryResult } from "@apollo/client";
 
@@ -11,7 +11,18 @@ interface PageHomePropsTypes {
 }
 
 const Home: NextPage<PageHomePropsTypes, JSX.Element> = ({ data }: { data: CharactersDataType }): JSX.Element => {
-  return <ComponentSectionCharactersList data={data} />;
+  return (
+    <>
+      <ComponentSectionCharactersList data={data} />
+
+      <Pagination
+        url="/"
+        paginationSize={4}
+        pageCount={data?.characters?.info?.pages || 1}
+        pageActive={data?.characters?.info?.next - 1 || 0}
+      />
+    </>
+  );
 };
 
 interface PropsTypes {

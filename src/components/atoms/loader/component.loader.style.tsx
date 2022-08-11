@@ -4,6 +4,8 @@ import { MainSettingsTemplate } from "utils/types/utils.types.mainSettingsTempla
 export const SpinerWrapper = styled.div`
   width: 8rem;
   height: 8rem;
+  display: block;
+  margin: 1.5rem auto;
   border-radius: 100%;
   animation: spin 2s linear infinite;
 
