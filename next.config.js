@@ -7,8 +7,9 @@ module.exports = (phase, { defaultConfig }) => {
   const nextConfig = {
     reactStrictMode: true,
     productionBrowserSourceMaps: true,
+
     images: {
-      domains: ["s3.eu-central-1.amazonaws.com", "rickandmortyapi.com"],
+      domains: ["rickandmortyapi.com"],
       formats: ["image/avif", "image/webp"],
     },
     webpack(config) {
