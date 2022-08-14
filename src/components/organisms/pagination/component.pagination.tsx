@@ -15,17 +15,15 @@ export default function ComponentPagination({ pageActive, pageCount, url, pagina
       </Item>
       {new Array(paginationSize - 1).fill(undefined).map(
         (_: undefined, i: number): JSX.Element => (
-          <>
-            <Item>
-              <Button
-                href={pageActive === -1 ? `${url}${pageCount - (paginationSize - 1) + i}` : `${url}${pageActive + i}`}
-                title={`page: ${pageActive === -1 ? `${pageCount - (paginationSize - 1) + i}` : `${pageActive + i}`}`}
-                disable={pageActive === (pageActive === -1 ? pageCount - (paginationSize - 1) + i : pageActive + i)}
-              >
-                {pageActive === -1 ? `${pageCount - (paginationSize - 1) + i}` : `${pageActive + i}`}
-              </Button>
-            </Item>
-          </>
+          <Item key={i}>
+            <Button
+              href={pageActive === -1 ? `${url}${pageCount - (paginationSize - 1) + i}` : `${url}${pageActive + i}`}
+              title={`page: ${pageActive === -1 ? `${pageCount - (paginationSize - 1) + i}` : `${pageActive + i}`}`}
+              disable={pageActive === (pageActive === -1 ? pageCount - (paginationSize - 1) + i : pageActive + i)}
+            >
+              {pageActive === -1 ? `${pageCount - (paginationSize - 1) + i}` : `${pageActive + i}`}
+            </Button>
+          </Item>
         )
       )}
 

@@ -37,8 +37,8 @@ export default function ComponentSectionCharacterFull({ data }: { data: Characte
         <QueryResult data={EpisodesData} loading={EpisodesLoading} error={EpisodesError}>
           <List type={ConponentListEnumTypes.vertical} selector="#" style={{ margin: "0 auto" }}>
             {EpisodesData?.character?.episode?.map(
-              (episote: EpisodeType, _: number): JSX.Element => (
-                <>{episote.name}</>
+              (episote: EpisodeType, i: number): JSX.Element => (
+                <span key={i}>{episote.name}</span>
               )
             )}
           </List>
