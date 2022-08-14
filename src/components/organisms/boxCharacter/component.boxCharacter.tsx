@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, NameCharacter } from "./component.boxCharacter.style";
+import { Box, NameCharacter, Content } from "./component.boxCharacter.style";
 import Status from "components/atoms/status/component.status";
 import { ComponentStatusEnumTypes } from "components/atoms/status/component.status.types";
 import List from "components/atoms/list/component.list";
@@ -26,19 +26,22 @@ const ComponentBoxCharacter = ({
           <BoxImage type={ComponentBoxImageEnumTypes.thumbnail} src={srcImage} />
         </a>
       </Link>
-      <NameCharacter>{nameCharacter}</NameCharacter>
-      {params?.length && (
-        <List type={ConponentListEnumTypes.level} selector="#">
-          {params.map((item: string, i: number): JSX.Element => {
-            if (!!item?.length) return <p key={i}>{item}</p>;
-            else return <p key={i}>NO DATA</p>;
-          })}
-        </List>
-      )}
+      <Content>
+        <NameCharacter>{nameCharacter}</NameCharacter>
 
-      <Button href={url} title="more">
-        MORE
-      </Button>
+        {params?.length && (
+          <List type={ConponentListEnumTypes.level} selector="#">
+            {params.map((item: string, i: number): JSX.Element => {
+              if (!!item?.length) return <p key={i}>{item}</p>;
+              else return <p key={i}>NO DATA</p>;
+            })}
+          </List>
+        )}
+
+        <Button href={url} title="more">
+          MORE
+        </Button>
+      </Content>
     </Box>
   );
 };

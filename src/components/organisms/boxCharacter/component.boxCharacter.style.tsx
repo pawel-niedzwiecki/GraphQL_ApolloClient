@@ -19,14 +19,25 @@ export const Box = styled.div`
       padding-left: 0;
     }
   }
-
-  a {
-    margin: ${({ theme }: { theme: MainSettingsTemplate }) => theme.break.main}
-      ${({ theme }: { theme: MainSettingsTemplate }) => theme.break.main}
-      ${({ theme }: { theme: MainSettingsTemplate }) => theme.break.main} auto;
-  }
 `;
 
 export const NameCharacter = styled.h3`
   padding: ${({ theme }: { theme: MainSettingsTemplate }) => theme.break.main};
+`;
+
+export const Content = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+
+  ul {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 7.5rem;
+  }
+
+  a {
+    right: 1.5rem;
+    bottom: 1.5rem;
+    position: absolute;
+  }
 `;

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { MainSettingsTemplate } from "utils/types/utils.types.mainSettingsTemplate";
 import { ComponentListTypes, ComponentStatusEnumTypes } from "./component.status.types";
 
-export const Status = styled.ul<ComponentListTypes>`
+export const Status = styled.div<ComponentListTypes>`
   display: block;
   font-weight: bold;
   width: max-content;
