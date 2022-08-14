@@ -2,7 +2,7 @@
 
 I created the project for ,,Autentika" as task :)
 
-- [DEMO](https://autentikatask-kjdhu0i5e-pawel-niedzwiecki.vercel.app/)
+- [DEMO](https://autentikatask.vercel.app/)
 
 - [STORYBOOK - TRY ALL COMPONENTS](https://autentikataskstorybook-qr1mwpref-pawel-niedzwiecki.vercel.app/)
 
