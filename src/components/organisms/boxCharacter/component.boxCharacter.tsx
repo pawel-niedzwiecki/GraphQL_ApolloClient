@@ -8,6 +8,7 @@ import BoxImage from "components/atoms/boxImage/component.boxImage";
 import { ComponentBoxImageEnumTypes } from "components/atoms/boxImage/component.boxImage.types";
 import { ComponentBoxCharacterPropsTypes } from "./component.boxCharacter.types";
 import Button from "components/atoms/button/component.button";
+import Link from "next/link";
 
 const ComponentBoxCharacter = ({
   statusType = ComponentStatusEnumTypes.succes,
@@ -20,7 +21,11 @@ const ComponentBoxCharacter = ({
   return (
     <Box>
       <Status statusName={statusName} type={statusType} style={{ position: "absolute", right: "1.5rem", top: "1.5rem", zIndex: "99" }} />
-      <BoxImage type={ComponentBoxImageEnumTypes.thumbnail} src={srcImage} />
+      <Link href={url}>
+        <a>
+          <BoxImage type={ComponentBoxImageEnumTypes.thumbnail} src={srcImage} />
+        </a>
+      </Link>
       <NameCharacter>{nameCharacter}</NameCharacter>
       {params?.length && (
         <List type={ConponentListEnumTypes.level} selector="#">
