@@ -6,6 +6,7 @@ export const Section = styled.section`
   border-radius: 0.6rem;
   border: 0.3rem solid white;
   min-height: calc(100vh - 10rem);
+  margin-bottom: ${({ theme }: { theme: MainSettingsTemplate }) => theme.break.big};
 `;
 
 export const NameCharacter = styled.h1`
