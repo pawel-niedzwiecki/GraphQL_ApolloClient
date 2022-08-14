@@ -3,11 +3,11 @@ import { MainSettingsTemplate } from "utils/types/utils.types.mainSettingsTempla
 
 export const Pagination = styled.ul`
   display: flex;
-  margin: 0 auto;
   flex-wrap: wrap;
   max-width: 100%;
   width: max-content;
   align-items: flex-end;
+  margin: ${({ theme }: { theme: MainSettingsTemplate }) => theme.break.big} auto;
 
   span {
     font-size: 2rem;
