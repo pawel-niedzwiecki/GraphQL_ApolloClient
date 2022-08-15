@@ -1,7 +1,7 @@
 import React from "react";
 
 import Button from "./component.button";
-import { ButtonTypes } from "./component.button.types";
+import { ButtonLinkTypes } from "./component.button.types";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 export default {
@@ -9,7 +9,7 @@ export default {
   component: Button,
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args: ButtonTypes): JSX.Element => (
+const Template: ComponentStory<typeof Button> = (args: ButtonLinkTypes): JSX.Element => (
   <>
     <Button id="main" {...args}>
       {args.children}
