@@ -1,7 +1,7 @@
 import React from "react";
 import Pagination from "./component.pagination";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { PaginationPropsTypes } from "./component.pagination.types";
+import { PaginationPropsTypes } from "../../../utils/types/utils.types.pagination.types";
 
 export default {
   title: "Pagination/Pagination",

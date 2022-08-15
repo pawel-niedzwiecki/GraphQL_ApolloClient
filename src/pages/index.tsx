@@ -15,12 +15,7 @@ const Home: NextPage<PageHomePropsTypes, JSX.Element> = ({ data }: { data: Chara
     <>
       <ComponentSectionCharactersList data={data} />
 
-      <Pagination
-        url="/"
-        paginationSize={4}
-        pageCount={data?.characters?.info?.pages || 1}
-        pageActive={data?.characters?.info?.next - 1 || 0}
-      />
+      <Pagination url="/" paginationSize={4} pageCount={data?.characters?.info?.pages} pageActive={1} />
     </>
   );
 };

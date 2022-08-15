@@ -9,33 +9,29 @@ import { ApolloQueryResult } from "@apollo/client";
 
 interface PageHomePropsTypes {
   data: CharactersDataType;
+  pageActive: number;
 }
 
-const Home: NextPage<PageHomePropsTypes, JSX.Element> = ({ data }: { data: CharactersDataType }): JSX.Element => {
+const PageList: NextPage<PageHomePropsTypes, JSX.Element> = ({ data, pageActive }: PageHomePropsTypes): JSX.Element => {
   return (
     <>
       <ComponentSectionCharactersList data={data} />
-
-      <Pagination
-        url="/"
-        paginationSize={4}
-        pageCount={data?.characters?.info?.pages || 1}
-        pageActive={data?.characters?.info?.next - 1 || 0}
-      />
+      <Pagination url="/" paginationSize={4} pageCount={data?.characters?.info?.pages} pageActive={pageActive} />
     </>
   );
 };
 
 interface PropsTypes {
-  props: { data: CharactersDataType };
+  props: PageHomePropsTypes;
 }
 
-export async function getStaticProps({ params }: { params: { page: string } }): Promise<PropsTypes> {
-  const { data } = await client.query({ query: GET_CHARACTERS, variables: { page: parseInt(params.page), name: "" } });
+export async function getStaticProps({ params: { page } }: { params: { page: string } }): Promise<PropsTypes> {
+  const { data } = await client.query({ query: GET_CHARACTERS, variables: { page: parseInt(page), name: "" } });
 
   return {
     props: {
       data,
+      pageActive: parseInt(page),
     },
   };
 }
@@ -53,4 +49,4 @@ export async function getStaticPaths({ params }: any): Promise<any> {
   };
 }
 
-export default Home;
+export default PageList;
