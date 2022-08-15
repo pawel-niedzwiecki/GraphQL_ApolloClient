@@ -11,7 +11,7 @@ export default function ComponentSectionCharactersList({ data }: { data: Charact
 
   return (
     <Section>
-      {data?.characters?.results.map((character: CharacterType, i: number): JSX.Element => {
+      {data?.characters?.results?.map((character: CharacterType, i: number): JSX.Element => {
         return (
           <Col xs={12} md={6} xl={4} key={i}>
             <BoxCharacter

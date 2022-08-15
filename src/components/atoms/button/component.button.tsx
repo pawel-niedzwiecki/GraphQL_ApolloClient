@@ -1,14 +1,14 @@
 import React from "react";
 import Link from "next/link";
-import { Button } from "./component.button.style";
-import { ButtonTypes } from "./component.button.types";
+import { ButtonLink } from "./component.button.style";
+import { ButtonLinkTypes } from "./component.button.types";
 
-const ComponentButton = ({ id, disable = false, href, title, children }: ButtonTypes): JSX.Element => {
+const ComponentButton = ({ id, disable = false, href, title, children }: ButtonLinkTypes): JSX.Element => {
   return (
     <Link id={id} href={href} passHref>
-      <Button disable={disable} title={title} onClick={(e) => disable && e.preventDefault()}>
+      <ButtonLink disable={disable} title={title} onClick={(e) => disable && e.preventDefault()}>
         {children}
-      </Button>
+      </ButtonLink>
     </Link>
   );
 };

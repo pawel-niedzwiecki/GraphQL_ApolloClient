@@ -1,13 +1,14 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ButtonSwitch } from "./component.button.types";
 import { MainSettingsTemplate } from "utils/types/utils.types.mainSettingsTemplate";
 
-export const Button = styled.a<ButtonSwitch>`
+const ButtonStyle = css<ButtonSwitch>`
   display: block;
   font-weight: bold;
   position: relative;
   width: max-content;
   border-radius: 3rem;
+  background-color: transparent;
   cursor: ${({ disable }: { disable: boolean }): string => (disable ? "no-drop" : "pointer")};
   color: ${({ theme, disable }: { theme: MainSettingsTemplate; disable: boolean }): string =>
     disable ? theme.colorDesactive : theme.colorWhite};
@@ -23,4 +24,12 @@ export const Button = styled.a<ButtonSwitch>`
     background-color: ${({ theme, disable }: { theme: MainSettingsTemplate; disable: boolean }): string =>
       disable ? "" : theme.colorSucces};
   }
+`;
+
+export const ButtonLink = styled.a`
+  ${ButtonStyle}
+`;
+
+export const Button = styled.button`
+  ${ButtonStyle}
 `;

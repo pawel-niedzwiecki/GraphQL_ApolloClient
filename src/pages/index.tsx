@@ -1,5 +1,5 @@
 import type { NextPage } from "next";
-import { client } from "utils/dataBase/client/apollo-client";
+import { client } from "utils/dataBase/client/apolloClient";
 import { CharactersDataType } from "utils/types/db/query/types.db.query.characters";
 import { GET_CHARACTERS } from "utils/dataBase/query/utils.db.query.getSearchCharacters";
 import Pagination from "components/organisms/pagination/component.pagination";

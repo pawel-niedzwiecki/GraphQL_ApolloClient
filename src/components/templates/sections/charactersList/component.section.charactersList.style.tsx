@@ -7,6 +7,5 @@ export const Section = styled.section`
   flex-direction: row;
   align-content: stretch;
   box-sizing: border-box;
-  -ms-flex-line-pack: stretch;
-  -webkit-align-content: stretch;
+  padding-bottom: 3rem;
 `;

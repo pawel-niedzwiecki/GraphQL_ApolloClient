@@ -18,6 +18,7 @@ const ComponentHeader = (): JSX.Element => {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const { querySearch, setQuerySearch } = useContext(SearchContext);
+
   const [getQuery, { data, loading }] = useLazyQuery<CharactersDataType>(GET_CHARACTERS, {
     variables: { page: 1, name: querySearch },
   });

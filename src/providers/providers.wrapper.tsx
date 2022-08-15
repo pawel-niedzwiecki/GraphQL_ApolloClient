@@ -3,7 +3,7 @@ import settings from "assets/style/settings";
 import { ApolloProvider } from "@apollo/client";
 import { ThemeProvider } from "styled-components";
 import ProviderSearch from "providers/providers.search";
-import { client } from "utils/dataBase/client/apollo-client";
+import { client } from "utils/dataBase/client/apolloClient";
 
 interface ProviderWrapperType {
   children?: JSX.Element | JSX.Element[];

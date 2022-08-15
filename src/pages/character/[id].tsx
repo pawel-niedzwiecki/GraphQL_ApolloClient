@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import { ApolloQueryResult } from "@apollo/client";
-import { client } from "utils/dataBase/client/apollo-client";
+import { client } from "utils/dataBase/client/apolloClient";
 import { GET_CHARACTER } from "utils/dataBase/query/utils.db.query.character";
 import { ComponentSectionCharacterFull } from "components/templates/sections";
 import { CharacterType, CharacterDataType } from "utils/types/db/query/types.db.query.character";

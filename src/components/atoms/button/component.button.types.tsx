@@ -4,8 +4,12 @@ export interface ButtonSwitch {
 
 export interface ButtonTypes {
   id?: string;
-  href: string;
   title?: string;
   disable?: boolean;
+  onClick?: () => void;
   children: JSX.Element | string;
+}
+
+export interface ButtonLinkTypes extends ButtonTypes {
+  href: string;
 }
