@@ -10,8 +10,9 @@ import { Container, Row } from "components/molecules/gridSystem";
 import { Header, Form, Hamburger, BoxForMobile } from "./component.header.style";
 import InputSearch from "components/molecules/inputSearch/component.inputSearch";
 import { ConponentListEnumTypes } from "components/atoms/list/component.list.types";
-import { GET_CHARACTERS } from "utils/dataBase/query/utils.db.query.characters";
-import { CharactersDataType, CharacterType } from "utils/types/db/query/types.db.query.characters";
+import { GET_CHARACTERS } from "utils/dataBase/query/utils.db.query.getSearchCharacters";
+import { CharactersDataType } from "utils/types/db/query/types.db.query.characters";
+import { CharacterType } from "utils/types/db/query/types.db.query.character";
 
 const ComponentHeader = (): JSX.Element => {
   const router = useRouter();

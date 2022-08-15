@@ -3,7 +3,7 @@ import { SearchContext } from "providers/providers.search";
 import React, { useContext, useEffect, useState } from "react";
 
 import { useQuery } from "@apollo/client";
-import { GET_CHARACTERS } from "utils/dataBase/query/utils.db.query.characters";
+import { GET_CHARACTERS } from "utils/dataBase/query/utils.db.query.getSearchCharacters";
 
 import { QueryResult } from "components/molecules/queryResult/component.queryResult";
 import { ComponentSectionCharactersList } from "components/templates/sections";
@@ -17,7 +17,7 @@ const PageSearch: NextPage<PageSearchPropsTypes, JSX.Element> = (props: PageSear
   const [query, setQuery] = useState(props.search);
   const { querySearch, setQuerySearch } = useContext(SearchContext);
 
-  const { loading, data, error } = useQuery(GET_CHARACTERS, {
+  const { loading, data, error, fetchMore } = useQuery(GET_CHARACTERS, {
     variables: { page: page, name: query },
   });
 
@@ -28,6 +28,18 @@ const PageSearch: NextPage<PageSearchPropsTypes, JSX.Element> = (props: PageSear
   return (
     <QueryResult loading={loading} data={data} error={error}>
       <ComponentSectionCharactersList data={data} />
+      <button
+        onClick={() =>
+          fetchMore({
+            variables: {
+              page: page,
+              name: query,
+            },
+          })
+        }
+      >
+        more
+      </button>
     </QueryResult>
   );
 };

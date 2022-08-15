@@ -1,18 +1,16 @@
-export interface CharacterType {
-  id: string;
-  name: string;
-  image: string;
-  status: string;
-  species: string;
-  type: string;
-  created: Date;
-}
+import { CharacterType } from "./types.db.query.character";
 
-export interface InfoCharactersDataType {
+export interface InfoCharactersType {
   next: number;
+  count: number;
   pages: number;
 }
 
+export interface CharactersType {
+  results: CharacterType[];
+  info: InfoCharactersType;
+}
+
 export interface CharactersDataType {
-  characters: { results: CharacterType[]; info: InfoCharactersDataType };
+  characters: CharactersType;
 }

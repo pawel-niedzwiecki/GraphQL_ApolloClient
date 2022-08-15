@@ -1,7 +1,8 @@
 import { Col } from "components/molecules/gridSystem";
 import BoxCharacter from "components/organisms/boxCharacter/component.boxCharacter";
 import { ComponentStatusEnumTypes } from "components/atoms/status/component.status.types";
-import { CharactersDataType, CharacterType } from "utils/types/db/query/types.db.query.characters";
+import { CharactersDataType } from "utils/types/db/query/types.db.query.characters";
+import { CharacterType } from "utils/types/db/query/types.db.query.character";
 import { Section } from "./component.section.charactersList.style";
 import { useEffect } from "react";
 
