@@ -4,7 +4,7 @@ I created the project for ,,Autentika" as task :)
 
 - [DEMO](https://autentikatask.vercel.app/)
 
-- [STORYBOOK - TRY ALL COMPONENTS](https://autentikataskstorybook-qr1mwpref-pawel-niedzwiecki.vercel.app/)
+- [STORYBOOK - TRY ALL COMPONENTS](https://autentikataskstorybook.vercel.app/)
 
 # The project uses :
 
